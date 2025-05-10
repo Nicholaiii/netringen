@@ -1,0 +1,1 @@
+ALTER TABLE `sites` ADD `integrated` integer DEFAULT false NOT NULL;
