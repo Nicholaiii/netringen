@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <div class="content">Banner?</div>
+    <div class="content">Velkommen til Netringen!</div>
   </div>
 </template>
 
