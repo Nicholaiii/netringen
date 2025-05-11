@@ -6,12 +6,19 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   // Nuxt Modules
   // https://nuxt.com/modules
-  modules: ["@nuxthub/core", "@nuxt/eslint"],
+  modules: ["@nuxthub/core", "@nuxt/eslint", "@nuxtjs/i18n"],
   hub: {
     database: true,
     cache: true,
   },
   css: ["@/assets/style/reset.scss", "@/assets/style/main.scss"],
+  i18n: {
+    defaultLocale: "en",
+    locales: [
+      { code: "en", name: "English", file: "en.json" },
+      { code: "dk", name: "Danish", file: "dk.json" },
+    ],
+  },
   // Development
   devtools: { enabled: true },
 });

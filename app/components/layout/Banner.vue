@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <div class="content">Velkommen til Netringen!</div>
+    <div class="content">{{ $t("welcome_to_netringen") }}</div>
   </div>
 </template>
 

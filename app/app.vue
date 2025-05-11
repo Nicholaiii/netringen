@@ -7,7 +7,6 @@ useSeoMeta({
 
 <template>
   <NuxtLayout>
-    <PageTitle />
     <NuxtPage />
   </NuxtLayout>
 </template>

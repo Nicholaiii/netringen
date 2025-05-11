@@ -1,5 +1,6 @@
 <template>
   <main>
-    <span>Velkommen til.</span>
+    <h2>Info</h2>
+    <p>{{ $t("welcome_to_netringen") }}</p>
   </main>
 </template>

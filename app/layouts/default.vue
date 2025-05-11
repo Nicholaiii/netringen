@@ -3,6 +3,7 @@
     <LayoutHeader />
     <LayoutBanner />
     <main><slot /></main>
+    <LayoutFooter />
   </div>
 </template>
 
@@ -23,7 +24,6 @@
     padding: 1em;
     background-color: var(--blue-dark);
     color: var(--white);
-    margin-bottom: 2em;
     border-bottom: 2px solid var(--black-light);
     border-left: 2px solid var(--black-light);
     border-right: 2px solid var(--black-light);
