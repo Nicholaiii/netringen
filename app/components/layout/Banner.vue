@@ -9,8 +9,10 @@
 <style lang="scss" scoped>
 .banner {
   height: 35px;
-  width: 1030px;
-  background-color: var(--blue-light);
+  width: calc(100% + 35px);
+  max-width: calc(1000px + 35px);
+  background-image: url("@/assets/img/banner-bg.gif");
+  color: var(--white);
   border: 2px solid var(--blue);
   position: relative;
   display: flex;
@@ -35,7 +37,7 @@
     width: 20px;
     height: 20px;
     clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-    background-color: var(--blue);
+    background-color: #0f052d;
     z-index: -1;
   }
 
@@ -48,7 +50,7 @@
     width: 20px;
     height: 20px;
     clip-path: polygon(0 0, 100% 100%, 0 100%);
-    background-color: var(--blue);
+    background-color: #0f052d;
     z-index: -1;
   }
 }
