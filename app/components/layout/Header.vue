@@ -2,7 +2,7 @@
   <header>
     <div class="logo">
       <NuxtLink to="/">
-        <img src="@/assets/img/netringen-logo.png" alt="Netringen logo" />
+        <img src="@/assets/img/netringen-logo.svg" alt="Netringen logo" />
       </NuxtLink>
     </div>
     <aside>
@@ -21,7 +21,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 3em 1em;
-  background-image: url("@/assets/img/bg-stars.png");
+  background-image: url("@/assets/img/bg-stars.svg");
   border-top: 2px solid var(--black-light);
   border-left: 2px solid var(--black-light);
   border-right: 2px solid var(--black-light);
