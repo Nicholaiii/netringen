@@ -5,7 +5,9 @@
         <img src="@/assets/img/netringen-logo.png" alt="Netringen logo" />
       </NuxtLink>
     </div>
-    <aside>Aside stuff</aside>
+    <aside>
+      <HitCounter />
+    </aside>
   </header>
 </template>
 
