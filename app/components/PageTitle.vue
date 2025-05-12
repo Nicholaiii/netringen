@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const title = ref('Netringen')
+const title = ref("komputer.club");
 </script>
 
 <template>
@@ -8,6 +8,4 @@ const title = ref('Netringen')
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

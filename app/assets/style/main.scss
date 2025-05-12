@@ -14,7 +14,10 @@
 
 body {
   background-image: url("@/assets/img/background.jpg");
+  background-color: var(--blue-dark);
   font-family: "FreePixel", sans-serif;
+  overflow-x: hidden;
+  background-repeat: repeat;
 }
 
 :root {

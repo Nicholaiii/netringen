@@ -1,4 +1,4 @@
-# Netringen
+# komputer.club
 
 WIP og så videre
 

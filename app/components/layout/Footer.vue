@@ -27,12 +27,16 @@ footer {
   max-width: 1000px;
   width: 100%;
   padding: 10px 1em;
-  background-image: url("@/assets/img/bg-stars.svg");
+  background-image: url("@/assets/img/bg-stars.png");
   color: var(--white);
   margin-bottom: 2em;
   border-bottom: 2px solid var(--black-light);
   border-left: 2px solid var(--black-light);
   border-right: 2px solid var(--black-light);
+
+  @media (max-width: 700px) {
+    font-size: 0.75em;
+  }
 }
 
 button {
