@@ -11,7 +11,7 @@
   height: 35px;
   width: calc(100% + 35px);
   max-width: calc(1000px + 35px);
-  background-image: url("@/assets/img/banner-bg.svg");
+  background-image: url("@/assets/img/banner-bg.png");
   color: var(--white);
   border: 2px solid var(--blue);
   position: relative;

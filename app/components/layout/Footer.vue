@@ -27,7 +27,7 @@ footer {
   max-width: 1000px;
   width: 100%;
   padding: 10px 1em;
-  background-image: url("@/assets/img/bg-stars.svg");
+  background-image: url("@/assets/img/bg-stars.png");
   color: var(--white);
   margin-bottom: 2em;
   border-bottom: 2px solid var(--black-light);
