@@ -7,7 +7,7 @@
         <img
           src="@/assets/img/komputerclub-logo.png"
           alt="komputer.club logo"
-        />
+        >
       </NuxtLink>
     </div>
     <aside>

@@ -1,11 +1,11 @@
 {
-    "recommendations": [
-        "lokalise.i18n-ally",
-        "vue.volar",
-        "dbaeumer.vscode-eslint",
-        "editorconfig.editorconfig",
-        "streetsidesoftware.code-spell-checker",
-        "nuxtr.nuxtr-vscode",
-        "jgclark.vscode-todo-highlight"
-    ]
+  "recommendations": [
+    "lokalise.i18n-ally",
+    "vue.volar",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker",
+    "nuxtr.nuxtr-vscode",
+    "jgclark.vscode-todo-highlight"
+  ]
 }
