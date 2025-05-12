@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const title = ref('Netringen')
-console.log('what')
+const title = ref("komputer.club");
+console.log("what");
 </script>
 
 <template>
@@ -9,6 +9,4 @@ console.log('what')
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

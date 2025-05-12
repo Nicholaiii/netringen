@@ -2,7 +2,10 @@
   <header>
     <div class="logo">
       <NuxtLink to="/">
-        <img src="@/assets/img/netringen-logo.svg" alt="Netringen logo" />
+        <img
+          src="@/assets/img/komputerclub-logo.svg"
+          alt="komputer.club logo"
+        />
       </NuxtLink>
     </div>
     <aside>

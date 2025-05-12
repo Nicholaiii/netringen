@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: "Netringen",
+  title: "komputer.club",
   description: "En webring for danske hjemmesider.",
 });
 </script>
