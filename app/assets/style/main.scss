@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "FreePixel";
+  src: url("@/assets/fonts/FreePixel.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "WWDigital";
+  src: url("@/assets/fonts/wwDigital.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-image: url("@/assets/img/background.jpg");
+  font-family: "FreePixel", sans-serif;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --black-light: #6e6e6e;
+  --blue: #71b1b9;
+  --blue-light: #c8e0e3;
+  --blue-dark: #0f052d;
+  --purple: #adadfd;
+  --green: #5fc75d;
+}
