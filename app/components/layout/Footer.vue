@@ -33,6 +33,10 @@ footer {
   border-bottom: 2px solid var(--black-light);
   border-left: 2px solid var(--black-light);
   border-right: 2px solid var(--black-light);
+
+  @media (max-width: 700px) {
+    font-size: 0.75em;
+  }
 }
 
 button {
