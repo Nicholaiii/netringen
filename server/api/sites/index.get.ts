@@ -10,4 +10,3 @@ export default defineEventHandler(async () => {
 
   return await Effect.runPromise(pipeline)
 })
-

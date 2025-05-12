@@ -1,10 +1,12 @@
+<script lang="ts" setup></script>
+
 <template>
   <div class="banner">
-    <div class="content">{{ $t("welcome_to_netringen") }}</div>
+    <div class="content">
+      {{ $t("welcome_to_netringen") }}
+    </div>
   </div>
 </template>
-
-<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 .banner {

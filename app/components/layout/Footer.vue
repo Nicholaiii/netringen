@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const { locales, setLocale } = useI18n()
+</script>
+
 <template>
   <footer>
     <span>No rights reserved. 🏴‍☠️</span>
@@ -14,10 +18,6 @@
     </div>
   </footer>
 </template>
-
-<script lang="ts" setup>
-const { locales, setLocale } = useI18n();
-</script>
 
 <style lang="scss" scoped>
 footer {

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const title = ref('Netringen')
-console.log('what')
 </script>
 
 <template>

@@ -1,5 +1,5 @@
-import { Effect } from 'effect'
 import { SqliteDrizzle } from '@effect/sql-drizzle/Sqlite'
+import { Effect } from 'effect'
 
 export class SiteService extends Effect.Service<SiteService>()('SiteService', {
   effect: Effect.gen(function* () {
@@ -12,5 +12,5 @@ export class SiteService extends Effect.Service<SiteService>()('SiteService', {
     return { list } as const
   }),
   accessors: true,
-  dependencies: [DrizzleLive]
+  dependencies: [DrizzleLive],
 }) {}

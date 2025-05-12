@@ -1,8 +1,10 @@
+<script lang="ts" setup></script>
+
 <template>
   <header>
     <div class="logo">
       <NuxtLink to="/">
-        <img src="@/assets/img/netringen-logo.svg" alt="Netringen logo" />
+        <img src="@/assets/img/netringen-logo.svg" alt="Netringen logo">
       </NuxtLink>
     </div>
     <aside>
@@ -10,8 +12,6 @@
     </aside>
   </header>
 </template>
-
-<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 header {
