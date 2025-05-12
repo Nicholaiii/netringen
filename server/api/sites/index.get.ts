@@ -7,7 +7,6 @@ export default defineEventHandler(async () => {
     SiteService.list().pipe(
     Effect.flatMap(Schema.decode(Schema.Array(Site))),
     Effect.provide(SiteService.Default),
-    Effect.provide(DrizzleLive())
   )
 
   return await Effect.runPromise(pipeline)

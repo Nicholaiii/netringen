@@ -11,5 +11,6 @@ export class SiteService extends Effect.Service<SiteService>()('SiteService', {
 
     return { list } as const
   }),
-  accessors: true
+  accessors: true,
+  dependencies: [DrizzleLive]
 }) {}

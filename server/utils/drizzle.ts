@@ -7,13 +7,14 @@ export { sql, eq, and, or } from 'drizzle-orm'
 
 export const tables = schema
 
-const D1Live = () => D1Client.layer({
+const D1Live = Layer.suspend(() => D1Client.layer({
   db: hubDatabase() as D1Client.D1ClientConfig['db']
-})
+}))
 
-export const DrizzleLive = () => SqliteDrizzleLayer.pipe(
-  Layer.provide(D1Live())
+export const DrizzleLive = SqliteDrizzleLayer.pipe(
+  Layer.provide(D1Live)
 )
 
 export type SiteSelect = typeof schema.sites.$inferSelect
 export type SiteInsert = typeof schema.sites.$inferInsert
+
