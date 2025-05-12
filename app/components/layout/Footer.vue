@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <span>No rights reserved. 🏴‍☠️</span>
+    <span>{{ $t("footer.no_rights_reserved") }}</span>
     <div>
       <span v-for="(locale, index) in locales" :key="index">
         <button
