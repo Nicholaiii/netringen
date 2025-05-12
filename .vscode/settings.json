@@ -7,5 +7,9 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     ".vscode/**": true
-  }
+  },
+  "i18n-ally.localesPaths": [
+    "i18n",
+    "i18n/locales"
+  ]
 }
