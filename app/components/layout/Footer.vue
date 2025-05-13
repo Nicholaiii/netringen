@@ -1,7 +1,10 @@
 <template>
   <footer>
-    <span>{{ $t("footer.no_rights_reserved") }}</span>
-    <div>
+    <span class="rights">
+      {{ $t("footer.no_rights_reserved") }}
+      <img src="@/assets/img/pirate_flag.gif" alt="pirate flag" />
+    </span>
+    <span>
       <span v-for="(locale, index) in locales" :key="index">
         <button
           :class="{ active: locale.code === $i18n.locale }"
@@ -11,7 +14,7 @@
         </button>
         <span v-if="locale.code !== locales[locales.length - 1]?.code"> /</span>
       </span>
-    </div>
+    </span>
   </footer>
 </template>
 
@@ -33,6 +36,16 @@ footer {
   border-bottom: 2px solid var(--black-light);
   border-left: 2px solid var(--black-light);
   border-right: 2px solid var(--black-light);
+
+  .rights {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 1.2em;
+      margin-left: 7.5px;
+    }
+  }
 
   @media (max-width: 700px) {
     font-size: 0.75em;
