@@ -13,7 +13,7 @@ export class URLParsingService extends Effect.Service<URLParsingService>()('URLP
       Url.fromString(maybeUrl),
       Either.filterOrLeft(
         url => isFQDN(url.hostname),
-        () => new IllegalArgumentException('Absolute URL required'),
+        () => new IllegalArgumentException('Only FQDN allowed'),
       ),
       Either.map(Url.setProtocol('https:')),
     )
