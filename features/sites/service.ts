@@ -9,7 +9,9 @@ export class SiteService extends Effect.Service<SiteService>()('SiteService', {
       return yield* db.select().from(tables.sites)
     })
 
-    return { list } as const
+    return {
+      list,
+    } as const
   }),
   accessors: true,
   dependencies: [DrizzleLive],
