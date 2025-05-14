@@ -1,3 +1,17 @@
 {
-  "welcome_to_komputerclub": "Velkommen til komputer.club!"
+  "banner": {
+    "welcome_to_komputerclub": "Velkommen til komputer.club!"
+  },
+  "welcome": {
+    "welcome_oslash": "Velkommen o/",
+    "about_komputerclub": "komputer.club er en webring og fællesskab for dem, der værdsætter den tidlige webæstetik. Vi bringer magien tilbage fra personlige hjemmesider, animerede GIFs og den DIY-ånd, der gjorde internettet sjovt.",
+    "but_why": "Hvorfor?",
+    "why_komputerclub1": "Internettet er blevet en kommerciel ødemark. Vi vil gøre det personligt og sjovt igen.",
+    "why_komputerclub2": "Vi eksisterer for at bringe folk sammen, med hjemmesider lavet af mennesker - ikke sociale medier, der vil udnytte dig og dine personlige data.",
+    "whats_a_webring": "Hvad er en webring?",
+    "webring_explanation": "En webring er en samling af hjemmesider, der er linket sammen i en cirkulær rækkefølge. Webrings og linklister var den primære måde at opdage nye hjemmesider på i internettets tidlige dage, da søgemaskiner generelt var af lav kvalitet. De er en fantastisk måde at finde nyt og interessant indhold og at forbinde ligesindede mennesker."
+  },
+  "footer": {
+    "no_rights_reserved": "Ingen rettigheder forbeholdes. 🏴‍☠️"
+  }
 }
