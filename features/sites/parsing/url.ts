@@ -39,5 +39,17 @@ if (import.meta.vitest) {
       const result = yield* URLParsingService.parse('http://komputer.club')
       expect(result).toHaveProperty('protocol', 'https:')
     }).pipe(Effect.provide(URLParsingService.Default)))
+
+    it.effect('only allows proper FQDN URLs', () => Effect.gen(function* () {
+      const result1 = yield* URLParsingService.parse('https://127.0.0.1').pipe(Effect.flip)
+      const result2 = yield* URLParsingService.parse('https://localhost').pipe(Effect.flip)
+      const result3 = yield* URLParsingService.parse('very-evil').pipe(Effect.flip)
+      const result4 = yield* URLParsingService.parse('http://du.ck:1337')
+
+      expect(result1).toBeInstanceOf(IllegalArgumentException)
+      expect(result2).toBeInstanceOf(IllegalArgumentException)
+      expect(result3).toBeInstanceOf(IllegalArgumentException)
+      expect(result4).toBeInstanceOf(URL)
+    }).pipe(Effect.provide(URLParsingService.Default)))
   })
 }
