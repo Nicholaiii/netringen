@@ -4,4 +4,7 @@ export default defineConfig({
   test: {
     includeSource: ['server/**/*.ts', 'features/**/*.ts'],
   },
+  define: {
+    'import.meta.vitest': 'undefined',
+  },
 })

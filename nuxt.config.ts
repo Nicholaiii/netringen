@@ -30,5 +30,8 @@ export default defineNuxtConfig({
     test: {
       includeSource: ['server/**/*.ts'],
     },
+    define: {
+      'import.meta.vitest': 'undefined',
+    },
   },
 })
