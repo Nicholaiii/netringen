@@ -9,6 +9,7 @@ export default withNuxt(
       // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2654
       'unicorn/throw-new-error': ['off'],
       '@stylistic/space-before-function-paren': ['error', 'always'],
+      'antfu/top-level-function': ['off'],
     },
   }),
 )
