@@ -1,7 +1,6 @@
 import { FetchHttpClient, HttpClientError } from '@effect/platform'
 import * as HttpClient from '@effect/platform/HttpClient'
 import { filterStatusOk } from '@effect/platform/HttpClientResponse'
-import { expect, it } from '@effect/vitest'
 import * as cheerio from 'cheerio'
 import { Data, Effect } from 'effect'
 import { mockClientWithResponse } from '../../../test/fixtures/HttpClient'
@@ -33,8 +32,9 @@ export class HTMLParsingService extends Effect.Service<HTMLParsingService>()('HT
 }) {}
 
 if (import.meta.vitest) {
-  const test = import.meta.vitest
-  test.describe('HTMLParsingService', () => {
+  import.meta.vitest.describe('HTMLParsingService', async () => {
+    const { expect, it } = await import('@effect/vitest')
+
     it.effect('parses html', () => Effect.gen(function* () {
       const result = yield* HTMLParsingService.parseSite(`<div>foo</div>`)
       expect(result('div').text()).toBe('foo')
