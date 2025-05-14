@@ -26,4 +26,9 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+  vite: {
+    test: {
+      includeSource: ['server/**/*.ts'],
+    },
+  },
 })
