@@ -24,3 +24,20 @@ export class URLParsingService extends Effect.Service<URLParsingService>()('URLP
   },
   accessors: true,
 }) {}
+
+if (import.meta.vitest) {
+  import.meta.vitest.describe('URLParsingService', async () => {
+    const { it, expect } = await import('@effect/vitest')
+
+    it.effect('returns a correctly parsed URL', () => Effect.gen(function* () {
+      const result = yield* URLParsingService.parse('https://komputer.club')
+      expect(result).toBeInstanceOf(URL)
+      expect(result).toHaveProperty('hostname', 'komputer.club')
+    }).pipe(Effect.provide(URLParsingService.Default)))
+
+    it.effect('enforces tls', () => Effect.gen(function* () {
+      const result = yield* URLParsingService.parse('http://komputer.club')
+      expect(result).toHaveProperty('protocol', 'https:')
+    }).pipe(Effect.provide(URLParsingService.Default)))
+  })
+}
