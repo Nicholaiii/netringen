@@ -3,7 +3,7 @@
 <template>
   <div class="banner">
     <div class="content">
-      {{ $t("welcome_to_komputerclub") }}
+      {{ $t("banner.welcome_to_komputerclub") }}
     </div>
   </div>
 </template>
