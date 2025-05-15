@@ -4,6 +4,11 @@
   "compilerOptions": {
     "types": [
       "vitest/importMeta"
+    ],
+    "plugins": [
+      {
+        "name": "@effect/language-service"
+      }
     ]
   }
 }
