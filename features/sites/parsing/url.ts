@@ -1,4 +1,5 @@
 import { Url } from '@effect/platform'
+import { expect, layer } from '@effect/vitest'
 import { Effect, Either, pipe } from 'effect'
 import { IllegalArgumentException } from 'effect/Cause'
 
@@ -26,19 +27,17 @@ export class URLParsingService extends Effect.Service<URLParsingService>()('URLP
 }) {}
 
 if (import.meta.vitest) {
-  import.meta.vitest.describe('URLParsingService', async () => {
-    const { it, expect } = await import('@effect/vitest')
-
+  layer(URLParsingService.Default)('URLParsingService', (it) => {
     it.effect('returns a correctly parsed URL', () => Effect.gen(function* () {
       const result = yield* URLParsingService.parse('https://komputer.club')
       expect(result).toBeInstanceOf(URL)
       expect(result).toHaveProperty('hostname', 'komputer.club')
-    }).pipe(Effect.provide(URLParsingService.Default)))
+    }))
 
     it.effect('enforces tls', () => Effect.gen(function* () {
       const result = yield* URLParsingService.parse('http://komputer.club')
       expect(result).toHaveProperty('protocol', 'https:')
-    }).pipe(Effect.provide(URLParsingService.Default)))
+    }))
 
     it.effect('only allows proper FQDN URLs', () => Effect.gen(function* () {
       const result1 = yield* URLParsingService.parse('https://127.0.0.1').pipe(Effect.flip)
@@ -50,6 +49,6 @@ if (import.meta.vitest) {
       expect(result2).toBeInstanceOf(IllegalArgumentException)
       expect(result3).toBeInstanceOf(IllegalArgumentException)
       expect(result4).toBeInstanceOf(URL)
-    }).pipe(Effect.provide(URLParsingService.Default)))
+    }))
   })
 }

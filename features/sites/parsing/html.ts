@@ -1,8 +1,9 @@
 import { FetchHttpClient, HttpClientError } from '@effect/platform'
 import * as HttpClient from '@effect/platform/HttpClient'
 import { filterStatusOk } from '@effect/platform/HttpClientResponse'
+import { expect, layer } from '@effect/vitest'
 import * as cheerio from 'cheerio'
-import { Data, Effect } from 'effect'
+import { Data, Effect, Layer } from 'effect'
 import { mockClientWithResponse } from '../../../test/fixtures/HttpClient'
 
 export class CheerioError extends Data.TaggedError('CheerioError')<{
@@ -32,28 +33,27 @@ export class HTMLParsingService extends Effect.Service<HTMLParsingService>()('HT
 }) {}
 
 if (import.meta.vitest) {
-  import.meta.vitest.describe('HTMLParsingService', async () => {
-    const { expect, it } = await import('@effect/vitest')
+  const successDeps = Layer.merge(
+    mockClientWithResponse(new Response('bar')),
+    HTMLParsingService.DefaultWithoutDependencies,
+  )
 
+  layer(successDeps)('HTMLParsingService', (it) => {
     it.effect('parses html', () => Effect.gen(function* () {
       const result = yield* HTMLParsingService.parseSite(`<div>foo</div>`)
       expect(result('div').text()).toBe('foo')
-    }).pipe(Effect.provide(HTMLParsingService.Default)))
+    }))
 
     it.effect('loads bodies', () => Effect.gen(function* () {
       const result = yield* HTMLParsingService.loadSite(new URL('http://foo'))
       expect(result).toBe('bar')
-    }).pipe(
-      Effect.provide(mockClientWithResponse(new Response('bar'))),
-      Effect.provide(HTMLParsingService.DefaultWithoutDependencies),
-    ))
+    }))
 
-    it.effect('fails on non-2xx status', () => Effect.gen(function* () {
-      const result = yield* HTMLParsingService.loadSite(new URL('http://evil')).pipe(Effect.flip)
-      expect(result).toBeInstanceOf(HttpClientError.ResponseError)
-    }).pipe(
-      Effect.provide(mockClientWithResponse(new Response('baz', { status: 400 }))),
-      Effect.provide(HTMLParsingService.DefaultWithoutDependencies),
-    ))
+    it.layer(mockClientWithResponse(new Response('baz', { status: 400 })))((it) => {
+      it.effect('fails on non-2xx status', () => Effect.gen(function* () {
+        const result = yield* HTMLParsingService.loadSite(new URL('http://evil')).pipe(Effect.flip)
+        expect(result).toBeInstanceOf(HttpClientError.ResponseError)
+      }))
+    })
   })
 }
