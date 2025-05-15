@@ -1,8 +1,8 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "d41787b6-ee00-4c78-9581-4598b944eb94",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "ab41b4e8-c861-45b7-a0b4-1cc270f13559",
+  "prevId": "d41787b6-ee00-4c78-9581-4598b944eb94",
   "tables": {
     "sites": {
       "name": "sites",
@@ -27,6 +27,14 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
+        },
+        "integrated": {
+          "name": "integrated",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": false
         }
       },
       "indexes": {},
