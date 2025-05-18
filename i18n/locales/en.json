@@ -5,11 +5,20 @@
   "welcome": {
     "welcome_oslash": "Welcome o/",
     "about_komputerclub": "komputer.club is a webring and community for those who cherish the early web aesthetic. We're bringing back the magic of personal homepages, animated GIFs, and the DIY spirit that made the internet fun.",
-    "but_why": "But why?",
     "why_komputerclub1": "The internet has become a desolate, corporate wasteland. We want to make it personal and fun again.",
-    "why_komputerclub2": "We exist to bring people together, with websites made by people - not social media sites that want to prey on you and your personal data.",
-    "whats_a_webring": "What's a webring?",
-    "webring_explanation": "A webring is a collection of websites that are linked together in a circular fashion. Webrings and link lists were the primary way to discover new websites in the early days of the internet, since search engines were generally low quality. They are a great way to find new and interesting content, and to connect with like-minded people."
+    "why_komputerclub2": "We exist to bring people together, with websites made by people - not social media sites that want to prey on you and your personal data."
+  },
+  "join": {
+    "webring": "Webring",
+    "webring_explanation": "A webring is a collection of websites that are linked together in a circular fashion. Webrings and link lists were the primary way to discover new websites in the early days of the internet, since search engines were generally low quality. They are a great way to find new and interesting content, and to connect with like-minded people.",
+    "how_to_join": "How to join",
+    "join_komputerclub_explanation": "Register in the form below, and add the HTML on your site. We have an automated process to check if the HTML is present on your site, and if it is, you will be added to the webring. Be sure that you meet the requirements below.",
+    "requirements": "To join the webring, you need to:",
+    "requirements1": "1",
+    "requirements2": "2",
+    "requirements3": "3",
+    "code_of_conduct": "Code of Conduct",
+    "code_of_conduct_explanation": "123"
   },
   "footer": {
     "no_rights_reserved": "No rights reserved."

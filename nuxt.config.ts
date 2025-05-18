@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   // Nuxt Modules
   // https://nuxt.com/modules
-  modules: ["@nuxthub/core", "@nuxt/eslint", "@nuxtjs/i18n"],
+  modules: ["@nuxthub/core", "@nuxt/eslint", "@nuxtjs/i18n", "@vee-validate/nuxt"],
   hub: {
     database: true,
     cache: true,
