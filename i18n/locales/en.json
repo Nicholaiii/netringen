@@ -12,13 +12,17 @@
     "webring": "Webring",
     "webring_explanation": "A webring is a collection of websites that are linked together in a circular fashion. Webrings and link lists were the primary way to discover new websites in the early days of the internet, since search engines were generally low quality. They are a great way to find new and interesting content, and to connect with like-minded people.",
     "how_to_join": "How to join",
-    "join_komputerclub_explanation": "Register in the form below, and add the HTML on your site. We have an automated process to check if the HTML is present on your site, and if it is, you will be added to the webring. Be sure that you meet the requirements below.",
-    "requirements": "To join the webring, you need to:",
-    "requirements1": "1",
-    "requirements2": "2",
-    "requirements3": "3",
+    "join_komputerclub_explanation": "Register in the form below, and add the HTML on your site. We have an automated process to check if the HTML is present on your site, and if it is, you will be added to the webring.",
     "code_of_conduct": "Code of Conduct",
-    "code_of_conduct_explanation": "123"
+    "code_of_conduct_reference": "We generally follow the",
+    "contributor_covenant_link": "Contributor Covenant Code of Conduct",
+    "yesterweb_manifesto_link": "Yesterweb Manifesto",
+    "code_of_conduct_tldr": "TLDR - Our webring community commits to:",
+    "conduct_inclusive": "Creating an inclusive, harassment-free environment where we respect diverse perspectives and resolve conflicts through dialogue",
+    "conduct_responsibility": "Taking responsibility for our actions and accepting feedback with grace",
+    "conduct_wellbeing": "Contributing to collective wellbeing through collaborative rather than competitive approaches",
+    "conduct_preserve": "Collectively preserving and enhancing the open, free internet",
+    "and_the": "and the"
   },
   "footer": {
     "no_rights_reserved": "No rights reserved."

@@ -13,11 +13,7 @@
     "webring_explanation": "En webring er en samling af hjemmesider, der er linket sammen i en cirkulær rækkefølge. Webrings og linklister var den primære måde at opdage nye hjemmesider på i internettets tidlige dage, da søgemaskiner generelt var af lav kvalitet. De er en fantastisk måde at finde nyt og interessant indhold og at forbinde ligesindede mennesker.",
     "join_komputerclub": "Bliv en del af komputer.club",
     "how_to_join": "Sådan tilslutter du dig",
-    "join_komputerclub_explanation": "Registrer dig i formularen nedenfor, og tilføj HTML'en på din side. Vi har en automatiseret proces til at kontrollere, om HTML'en er sat ind på din side, og hvis den er, vil du blive tilføjet til webringen. Sørg for, at du opfylder kravene nedenfor.",
-    "requirements": "For at blive en del af webringen, skal du:",
-    "requirements1": "1",
-    "requirements2": "2",
-    "requirements3": "3",
+    "join_komputerclub_explanation": "Registrer dig i formularen nedenfor, og tilføj HTML'en på din side. Vi har en automatiseret proces til at kontrollere, om HTML'en er sat ind på din side, og hvis den er, vil du blive tilføjet til webringen.",
     "code_of_conduct": "Adfærdskodeks",
     "code_of_conduct_explanation": "123"
   },
