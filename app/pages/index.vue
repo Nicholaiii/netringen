@@ -24,7 +24,7 @@
       <p>
         {{ $t("join.join_komputerclub_explanation") }}
       </p>
-      <div class="separator">
+      <div class="register">
         <Register />
       </div>
       <h4>
@@ -54,6 +54,10 @@
 </template>
 
 <style lang="scss" scoped>
+.register {
+  margin: 2em 0;
+}
+
 ul {
   list-style-type: disc;
 
