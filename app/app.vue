@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import cursor from "~/utils/cursor.client.js";
+import { usePreferredReducedMotion } from "@vueuse/core";
+const preferredMotion = usePreferredReducedMotion();
+
+onMounted(() => {
+  if (preferredMotion.value !== "reduce") cursor();
+});
+
 cursor();
 useSeoMeta({
   title: "komputer.club",
