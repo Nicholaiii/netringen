@@ -6,7 +6,6 @@ onMounted(() => {
   if (preferredMotion.value !== "reduce") cursor();
 });
 
-cursor();
 useSeoMeta({
   title: "komputer.club",
   description: "En webring for danske hjemmesider.",
