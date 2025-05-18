@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-const title = ref("komputer.club");
-console.log("what");
+const title = ref('komputer.club')
 </script>
 
 <template>

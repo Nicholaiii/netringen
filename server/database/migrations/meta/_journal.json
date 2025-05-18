@@ -8,6 +8,13 @@
       "when": 1746691250607,
       "tag": "0000_lucky_supernaut",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1746782647046,
+      "tag": "0001_eminent_scorpion",
+      "breakpoints": true
     }
   ]
 }
