@@ -12,9 +12,7 @@
         {{ $t("welcome.why_komputerclub2") }}
       </p>
     </section>
-    <div class="separator">
-      <img src="@/assets/img/x_separator.gif" alt="separator" />
-    </div>
+    <Separator />
     <section>
       <h2>{{ $t("join.webring") }}</h2>
 
@@ -51,26 +49,11 @@
         {{ $t("join.code_of_conduct_explanation") }}
       </p>
     </section>
-    <div class="separator">
-      <img src="@/assets/img/x_separator.gif" alt="separator" />
-    </div>
+    <Separator />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.separator {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2em 0;
-
-  img {
-    width: 100%;
-    max-width: 750px;
-    height: auto;
-  }
-}
-
 ul {
   list-style-type: disc;
 
