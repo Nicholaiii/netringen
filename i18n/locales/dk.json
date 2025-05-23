@@ -5,13 +5,19 @@
   "welcome": {
     "welcome_oslash": "Velkommen o/",
     "about_komputerclub": "komputer.club er en webring og fællesskab for dem, der værdsætter den tidlige webæstetik. Vi bringer magien tilbage fra personlige hjemmesider, animerede GIFs og den DIY-ånd, der gjorde internettet sjovt.",
-    "but_why": "Hvorfor?",
     "why_komputerclub1": "Internettet er blevet en kommerciel ødemark. Vi vil gøre det personligt og sjovt igen.",
-    "why_komputerclub2": "Vi eksisterer for at bringe folk sammen, med hjemmesider lavet af mennesker - ikke sociale medier, der vil udnytte dig og dine personlige data.",
-    "whats_a_webring": "Hvad er en webring?",
-    "webring_explanation": "En webring er en samling af hjemmesider, der er linket sammen i en cirkulær rækkefølge. Webrings og linklister var den primære måde at opdage nye hjemmesider på i internettets tidlige dage, da søgemaskiner generelt var af lav kvalitet. De er en fantastisk måde at finde nyt og interessant indhold og at forbinde ligesindede mennesker."
+    "why_komputerclub2": "Vi eksisterer for at bringe folk sammen, med hjemmesider lavet af mennesker - ikke sociale medier, der vil udnytte dig og dine personlige data."
+  },
+  "join": {
+    "webring": "Webring",
+    "webring_explanation": "En webring er en samling af hjemmesider, der er linket sammen i en cirkulær rækkefølge. Webrings og linklister var den primære måde at opdage nye hjemmesider på i internettets tidlige dage, da søgemaskiner generelt var af lav kvalitet. De er en fantastisk måde at finde nyt og interessant indhold og at forbinde ligesindede mennesker.",
+    "join_komputerclub": "Bliv en del af komputer.club",
+    "how_to_join": "Sådan tilslutter du dig",
+    "join_komputerclub_explanation": "Registrer dig i formularen nedenfor, og tilføj HTML'en på din side. Vi har en automatiseret proces til at kontrollere, om HTML'en er sat ind på din side, og hvis den er, vil du blive tilføjet til webringen.",
+    "code_of_conduct": "Adfærdskodeks",
+    "code_of_conduct_explanation": "123"
   },
   "footer": {
-    "no_rights_reserved": "Ingen rettigheder forbeholdes. 🏴‍☠️"
+    "no_rights_reserved": "Ingen rettigheder forbeholdes."
   }
 }
