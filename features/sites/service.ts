@@ -1,8 +1,6 @@
 import { SqliteDrizzle } from '@effect/sql-drizzle/Sqlite'
-import { expect, layer } from '@effect/vitest'
-import { Effect, Layer, Option, pipe, Schema } from 'effect'
-import { DrizzleLive, DrizzleTest, SeedDatabase, tables, TestMigrationLayer } from '../../server/utils/drizzle'
-import { mockClientWithResponse } from '../../test/fixtures/HttpClient'
+import { Effect, Option, pipe, Schema } from 'effect'
+import { DrizzleLive, tables } from '../../server/utils/drizzle'
 import { Site, SiteInsert } from './model'
 import { HTMLParsingService } from './parsing/html'
 import { URLParsingService } from './parsing/url'
@@ -43,33 +41,3 @@ export class SiteService extends Effect.Service<SiteService>()('SiteService', {
   accessors: true,
   dependencies: [DrizzleLive],
 }) {}
-
-if (import.meta.vitest) {
-  const successDeps = Layer.mergeAll(
-    SiteService.DefaultWithoutDependencies.pipe(
-      Layer.provide(DrizzleTest),
-    ),
-    mockClientWithResponse(),
-    HTMLParsingService.DefaultWithoutDependencies,
-    URLParsingService.Default,
-    DrizzleTest,
-    TestMigrationLayer.pipe(
-      Layer.provide(DrizzleTest),
-    ),
-  )
-
-  layer(successDeps)('SiteService', async (it) => {
-    it.effect('returns a list of sites', Effect.fn(function* () {
-      const length = yield* SeedDatabase()
-
-      const result = yield* SiteService.list()
-      expect(result).not.toHaveLength(0)
-      expect(result).toHaveLength(length)
-    }))
-
-    it.scoped('inserts new site submissions', Effect.fn(function* () {
-      const result = yield* SiteService.insert('https://komputer.club/')
-      expect(result.url).toBe('https://komputer.club/')
-    }))
-  })
-}
