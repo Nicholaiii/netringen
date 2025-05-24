@@ -1,5 +1,4 @@
 import { createRequire } from 'node:module'
-import * as D1Client from '@effect/sql-d1/D1Client'
 import { SqliteDrizzle, layer as SqliteDrizzleLayer } from '@effect/sql-drizzle/Sqlite'
 import * as Sqlite from '@effect/sql-sqlite-node/SqliteClient'
 import { faker } from '@faker-js/faker'
@@ -8,12 +7,10 @@ import * as schema from '../database/schema'
 
 export const tables = schema
 
-const D1Live = Layer.suspend(() => D1Client.layer({
-  db: hubDatabase() as D1Client.D1ClientConfig['db'],
-}))
-
 export const DrizzleLive = SqliteDrizzleLayer.pipe(
-  Layer.provide(D1Live),
+  Layer.provide(Sqlite.layer({
+    filename: './database.db',
+  })),
 )
 
 export type SiteSelect = typeof schema.sites.$inferSelect

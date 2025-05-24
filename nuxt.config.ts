@@ -6,11 +6,7 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   // Nuxt Modules
   // https://nuxt.com/modules
-  modules: ['@nuxthub/core', '@nuxt/eslint', '@nuxtjs/i18n'],
-  hub: {
-    database: true,
-    cache: true,
-  },
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
   css: ['@/assets/style/reset.scss', '@/assets/style/main.scss'],
   i18n: {
     defaultLocale: 'en',
@@ -28,10 +24,7 @@ export default defineNuxtConfig({
   },
   vite: {
     test: {
-      includeSource: ['server/**/*.ts'],
-    },
-    define: {
-      'import.meta.vitest': 'undefined',
+      includeSource: ['server/**/*.test.ts', 'features/**/*.test.ts'],
     },
   },
 })
