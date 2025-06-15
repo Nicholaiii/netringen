@@ -59,6 +59,11 @@
       </ul>
     </section>
     <Separator />
+    <section>
+      <h2>{{ $t("members.members") || "Members" }}</h2>
+      <MembersList />
+    </section>
+    <Separator />
   </div>
 </template>
 

@@ -17,6 +17,9 @@
     "code_of_conduct": "Adfærdskodeks",
     "code_of_conduct_explanation": "123"
   },
+  "members": {
+    "members": "Medlemmer"
+  },
   "footer": {
     "no_rights_reserved": "Ingen rettigheder forbeholdes."
   }
