@@ -1,4 +1,3 @@
-import { createRequire } from 'node:module'
 import { SqliteDrizzle, layer as SqliteDrizzleLayer } from '@effect/sql-drizzle/Sqlite'
 import * as Sqlite from '@effect/sql-sqlite-node/SqliteClient'
 import { faker } from '@faker-js/faker'
