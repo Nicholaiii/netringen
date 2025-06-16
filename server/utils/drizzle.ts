@@ -2,7 +2,9 @@ import { createRequire } from 'node:module'
 import { SqliteDrizzle, layer as SqliteDrizzleLayer } from '@effect/sql-drizzle/Sqlite'
 import * as Sqlite from '@effect/sql-sqlite-node/SqliteClient'
 import { faker } from '@faker-js/faker'
+import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
 import { Console, Effect, Layer } from 'effect'
+
 import * as schema from '../database/schema'
 
 export const tables = schema
@@ -46,3 +48,16 @@ export const MigrationLayer = Layer.effectDiscard(Effect.gen(function* () {
     migrationsSchema: './server/database/schema.ts',
   }))
 
+  return yield* Console.info('Migrations complete')
+}))
+
+export const Migration = Effect.gen(function* () {
+  const db = yield* SqliteDrizzle
+
+  yield* Effect.tryPromise(async () => await migrate(db, {
+    migrationsFolder: './server/database/migrations',
+    migrationsSchema: './server/database/schema.ts',
+  }))
+
+  return yield* Console.info('Migrations complete')
+})

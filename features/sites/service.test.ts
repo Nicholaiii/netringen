@@ -1,6 +1,6 @@
 import { expect, layer } from '@effect/vitest'
 import { Effect, Layer } from 'effect'
-import { DrizzleTest, SeedDatabase, TestMigrationLayer } from '../../server/utils/drizzle'
+import { DrizzleTest, MigrationLayer, SeedDatabase } from '../../server/utils/drizzle'
 import { mockClientWithResponse } from '../../test/fixtures/HttpClient'
 import { HTMLParsingService } from './parsing/html'
 import { URLParsingService } from './parsing/url'
@@ -14,7 +14,7 @@ const successDeps = Layer.mergeAll(
   HTMLParsingService.DefaultWithoutDependencies,
   URLParsingService.Default,
   DrizzleTest,
-  TestMigrationLayer.pipe(
+  MigrationLayer.pipe(
     Layer.provide(DrizzleTest),
   ),
 )
