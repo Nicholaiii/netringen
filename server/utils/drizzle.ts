@@ -24,10 +24,6 @@ export const DrizzleTest = SqliteDrizzleLayer.pipe(
   Layer.provide(Sqlite.layer({ filename: ':memory:' })),
 )
 
-/* Required for test fixtures. TODO: Verify if this is still true */
-// eslint-disable-next-line no-restricted-globals
-global.require = createRequire(import.meta.url)
-
 const FakeSite = (): SiteInsert => ({
   name: faker.word.sample(),
   url: faker.internet.url({ appendSlash: true }),
@@ -42,11 +38,11 @@ export const SeedDatabase = Effect.fn('SeedDatabase')(function* () {
   return length
 })
 
-export const TestMigrationLayer = Layer.effectDiscard(Effect.gen(function* () {
+export const MigrationLayer = Layer.effectDiscard(Effect.gen(function* () {
   const db = yield* SqliteDrizzle
-  const { pushSQLiteSchema } = yield* Effect.tryPromise(() => import('drizzle-kit/api'))
 
-  const { apply } = yield* Effect.tryPromise(() => pushSQLiteSchema(schema, db))
-  yield* Effect.tryPromise(apply)
-  return yield* Console.info('🧪 Test Migrations Complete')
-}))
+  yield* Effect.tryPromise(async () => await migrate(db, {
+    migrationsFolder: './server/database/migrations',
+    migrationsSchema: './server/database/schema.ts',
+  }))
+
