@@ -26,3 +26,4 @@ logs
 
 # Database file
 database.db
+database.db*
