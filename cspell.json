@@ -2,9 +2,13 @@
     "version": "0.2",
     "ignorePaths": [],
     "dictionaryDefinitions": [],
-    "dictionaries": [],
+    "dictionaries": [
+        "en-GB",
+        "da-DK"
+    ],
     "words": [
-      "komputer"
+        "Healthcheck",
+        "komputer"
     ],
     "ignoreWords": [],
     "import": []
