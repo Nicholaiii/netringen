@@ -7,7 +7,6 @@ export default defineNuxtConfig({
   // Nuxt Modules
   // https://nuxt.com/modules
   modules: [
-    'P@nuxthub/core',
     '@nuxt/eslint',
     '@nuxtjs/i18n',
     '@vee-validate/nuxt',
