@@ -1,23 +1,62 @@
-import { drizzle } from 'drizzle-orm/d1'
-import { Context } from 'effect'
-import * as schema from '../database/schema'
+import { SqliteDrizzle, layer as SqliteDrizzleLayer } from '@effect/sql-drizzle/Sqlite'
+import * as Sqlite from '@effect/sql-sqlite-node/SqliteClient'
+import { faker } from '@faker-js/faker'
+import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
+import { Console, Effect, Layer } from 'effect'
 
-export { sql, eq, and, or } from 'drizzle-orm'
+import * as schema from '../database/schema'
 
 export const tables = schema
 
-export function useDrizzle () {
-  return {
-    db: drizzle(hubDatabase(), { schema }),
-    tables,
-  }
-}
+export const DrizzleLive = SqliteDrizzleLayer.pipe(
+  Layer.provide(Sqlite.layer({
+    filename: './database.db',
+  })),
+)
 
-export class DrizzleService extends Context.Tag('DrizzleService')<
-  DrizzleService,
-  ReturnType<typeof useDrizzle>
->() {
-  static live = () => useDrizzle()
-}
+export type SiteSelect = typeof schema.sites.$inferSelect
+export type SiteInsert = typeof schema.sites.$inferInsert
 
-export type Site = typeof schema.sites.$inferSelect
+/**
+ * Test fixtures
+ */
+
+export const DrizzleTest = SqliteDrizzleLayer.pipe(
+  Layer.provide(Sqlite.layer({ filename: ':memory:' })),
+)
+
+const FakeSite = (): SiteInsert => ({
+  name: faker.word.sample(),
+  url: faker.internet.url({ appendSlash: true }),
+})
+
+export const SeedDatabase = Effect.fn('SeedDatabase')(function* () {
+  const db = yield* SqliteDrizzle
+  const length = 50
+  faker.seed(161)
+
+  yield* db.insert(schema.sites).values(Array.from({ length }).map(FakeSite))
+  return length
+})
+
+export const MigrationLayer = Layer.effectDiscard(Effect.gen(function* () {
+  const db = yield* SqliteDrizzle
+
+  yield* Effect.tryPromise(async () => await migrate(db, {
+    migrationsFolder: './server/database/migrations',
+    migrationsSchema: './server/database/schema.ts',
+  }))
+
+  return yield* Console.info('Migrations complete')
+}))
+
+export const Migration = Effect.gen(function* () {
+  const db = yield* SqliteDrizzle
+
+  yield* Effect.tryPromise(async () => await migrate(db, {
+    migrationsFolder: './server/database/migrations',
+    migrationsSchema: './server/database/schema.ts',
+  }))
+
+  return yield* Console.info('Migrations complete')
+})

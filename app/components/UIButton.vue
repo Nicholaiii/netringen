@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const attrs = useAttrs()
+</script>
+
 <template>
   <button v-bind="attrs">
     <span class="button-inner">
@@ -5,10 +9,6 @@
     </span>
   </button>
 </template>
-
-<script setup lang="ts">
-const attrs = useAttrs();
-</script>
 
 <style scoped lang="scss">
 button {

@@ -1,0 +1,11 @@
+.github
+.git
+.output
+.nuxt
+.vscode
+node_modules
+.data
+.nitro
+.cache
+dist
+.wrangler

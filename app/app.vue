@@ -7,9 +7,9 @@ onMounted(() => {
 });
 
 useSeoMeta({
-  title: "komputer.club",
-  description: "En webring for danske hjemmesider.",
-});
+  title: 'komputer.club',
+  description: 'En webring for danske hjemmesider.',
+})
 </script>
 
 <template>

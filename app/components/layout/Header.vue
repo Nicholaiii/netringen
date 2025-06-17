@@ -1,3 +1,5 @@
+<script lang="ts" setup></script>
+
 <template>
   <header>
     <div class="logo">
@@ -5,7 +7,7 @@
         <img
           src="@/assets/img/komputerclub-logo.png"
           alt="komputer.club logo"
-        />
+        >
       </NuxtLink>
     </div>
     <aside>
@@ -13,8 +15,6 @@
     </aside>
   </header>
 </template>
-
-<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 header {
