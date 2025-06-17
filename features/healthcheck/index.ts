@@ -35,7 +35,7 @@ export const Healthcheck = Effect.fn('Healthcheck')(function* (upSince: Date, pr
   if (status === 'failure') {
     throw createError({
       status: 500,
-      message: 'Healthcheck failed :(',
+      message: 'Healthcheck failed! :(',
       data,
     })
   }
