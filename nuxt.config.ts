@@ -19,6 +19,9 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'dk', name: 'Danish', file: 'dk.json' },
     ],
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
   // Development
   devtools: { enabled: true },

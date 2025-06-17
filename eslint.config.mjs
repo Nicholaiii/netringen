@@ -10,6 +10,7 @@ export default withNuxt(
       'unicorn/throw-new-error': ['off'],
       '@stylistic/space-before-function-paren': ['error', 'always'],
       'antfu/top-level-function': ['off'],
+      'ts/no-redeclare': ['off'],
     },
   }),
 )
