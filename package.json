@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "test": "vitest",
+    "start": "nuxt start",
     "typecheck": "nuxt typecheck",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit push"
