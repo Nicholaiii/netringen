@@ -6,7 +6,13 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   // Nuxt Modules
   // https://nuxt.com/modules
-  modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
+  modules: [
+    'P@nuxthub/core',
+    '@nuxt/eslint',
+    '@nuxtjs/i18n',
+    '@vee-validate/nuxt',
+    '@vueuse/nuxt',
+  ],
   css: ['@/assets/style/reset.scss', '@/assets/style/main.scss'],
   i18n: {
     defaultLocale: 'en',
