@@ -41,7 +41,7 @@
     "drizzle-orm": "^0.44.2",
     "eslint": "^9.29.0",
     "sass": "^1.89.2",
-    "vue-tsc": "^2.2.10"
+    "vue-tsc": "^3.0.1"
   },
   "packageManager": "pnpm@10.12.1",
   "pnpm": {
