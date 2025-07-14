@@ -49,14 +49,3 @@ export const MigrationLayer = Layer.effectDiscard(Effect.gen(function* () {
 
   return yield* Console.info('Migrations complete')
 }))
-
-export const Migration = Effect.gen(function* () {
-  const db = yield* SqliteDrizzle
-
-  yield* Effect.tryPromise(async () => await migrate(db, {
-    migrationsFolder: './server/database/migrations',
-    migrationsSchema: './server/database/schema.ts',
-  }))
-
-  return yield* Console.info('Migrations complete')
-})
