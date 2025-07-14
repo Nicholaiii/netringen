@@ -23,7 +23,7 @@ defineRouteMeta({
 
 export default defineEventHandler(async (event) => {
   const { all } = await getValidatedQuery(event, decodeUnknownSync(
-    QueryParameters
+    QueryParameters,
   ))
 
   return await Effect.runPromise(pipeline(all))
