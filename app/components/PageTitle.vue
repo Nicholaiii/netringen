@@ -7,5 +7,3 @@ const title = ref('komputer.club')
     <h1>{{ title }}</h1>
   </div>
 </template>
-
-<style scoped></style>

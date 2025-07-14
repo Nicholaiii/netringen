@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import SlagTaeller from '../SlagTaeller.vue'
+</script>
 
 <template>
   <header>
@@ -11,7 +13,7 @@
       </NuxtLink>
     </div>
     <aside>
-      <HitCounter />
+      <SlagTaeller />
     </aside>
   </header>
 </template>
