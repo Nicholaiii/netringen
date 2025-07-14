@@ -1,10 +1,43 @@
+<script setup lang="ts">
+import { toTypedSchema } from '@vee-validate/zod'
+import { useForm } from 'vee-validate'
+import z from 'zod'
+
+const success = ref(false)
+const loading = ref(false)
+
+const { defineField, errors, handleSubmit } = useForm({
+  initialValues: {
+    url: '',
+  },
+  validationSchema: toTypedSchema(
+    z.object({
+      url: z.string().url('Invalid URL format').nonempty('URL is required'),
+    }),
+  ),
+})
+
+const [url] = defineField('url')
+
+const onSubmit = handleSubmit((values) => {
+  loading.value = true
+
+  setTimeout(() => {
+    success.value = true
+    loading.value = false
+  }, 1000)
+
+  return values
+})
+</script>
+
 <template>
-  <form @submit.prevent="onSubmit" v-if="!success">
+  <form v-if="!success" @submit.prevent="onSubmit">
     <div>
       <h5>Register</h5>
       <label for="url">URL</label>
       <span>
-        <input id="url" v-model="url" :class="{ error: errors.url }" />
+        <input id="url" v-model="url" :class="{ error: errors.url }">
         <button type="submit" :disabled="loading" @click="onSubmit">
           Submit
         </button>
@@ -18,38 +51,6 @@
     <p>Your URL has been submitted successfully!</p>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useForm } from "vee-validate";
-import { toTypedSchema } from "@vee-validate/zod";
-import z from "zod";
-
-const success = ref(false);
-const loading = ref(false);
-
-const { defineField, errors, handleSubmit } = useForm({
-  initialValues: {
-    url: "",
-  },
-  validationSchema: toTypedSchema(
-    z.object({
-      url: z.string().url("Invalid URL format").nonempty("URL is required"),
-    })
-  ),
-});
-
-const [url] = defineField("url");
-
-const onSubmit = handleSubmit((values) => {
-  console.log("submit", values);
-  loading.value = true;
-
-  setTimeout(() => {
-    success.value = true;
-    loading.value = false;
-  }, 1000);
-});
-</script>
 
 <style scoped lang="scss">
 form {

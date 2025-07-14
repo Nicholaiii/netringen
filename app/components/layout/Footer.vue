@@ -6,7 +6,7 @@ const { locales, setLocale } = useI18n()
   <footer>
     <span class="rights">
       {{ $t("footer.no_rights_reserved") }}
-      <img src="@/assets/img/pirate_flag.gif" alt="pirate flag" />
+      <img src="@/assets/img/pirate_flag.gif" alt="pirate flag">
     </span>
     <span>
       <span v-for="(locale, index) in locales" :key="index">

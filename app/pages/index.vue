@@ -37,12 +37,10 @@
           target="_blank"
           href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/"
         >
-          {{ $t("join.contributor_covenant_link") }}</a
-        >
+          {{ $t("join.contributor_covenant_link") }}</a>
         {{ $t("join.and_the") }}
         <a target="_blank" href="https://yesterweb.org/#manifesto">
-          {{ $t("join.yesterweb_manifesto_link") }}</a
-        >.
+          {{ $t("join.yesterweb_manifesto_link") }}</a>.
       </p>
       <p>{{ $t("join.code_of_conduct_tldr") }}</p>
       <ul>
