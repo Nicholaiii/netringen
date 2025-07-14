@@ -28,6 +28,7 @@ export const DrizzleTest = SqliteDrizzleLayer.pipe(
 const FakeSite = (): SiteInsert => ({
   name: faker.word.sample(),
   url: faker.internet.url({ appendSlash: true }),
+  integrated: faker.datatype.boolean(),
 })
 
 export const SeedDatabase = Effect.fn('SeedDatabase')(function* () {
