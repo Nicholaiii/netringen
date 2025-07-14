@@ -1,6 +1,7 @@
+import type { Status } from './model'
 import { SqliteDrizzle } from '@effect/sql-drizzle/Sqlite'
 import { Console, Effect, pipe } from 'effect'
-import { HealthcheckData, type Status } from './model'
+import { HealthcheckData } from './model'
 
 const dbStatus = SqliteDrizzle.pipe(
   Effect.flatMap(db => db.select().from(tables.sites).limit(0)),

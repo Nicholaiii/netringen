@@ -9,7 +9,7 @@ export class CheerioError extends Data.TaggedError('CheerioError')<{
 }> {}
 
 export class HTMLParsingService extends Effect.Service<HTMLParsingService>()('HTMLParsingService', {
-  effect: Effect.gen(function* () {
+  sync: () => {
     const parseSite = (html: string) => Effect.try({
       try: () => cheerio.load(html),
       catch: cause => new CheerioError({ cause }),
@@ -25,7 +25,7 @@ export class HTMLParsingService extends Effect.Service<HTMLParsingService>()('HT
       loadSite,
       parseSite,
     } as const
-  }),
+  },
   accessors: true,
   dependencies: [FetchHttpClient.layer],
 }) {}
