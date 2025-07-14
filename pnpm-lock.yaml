@@ -31,7 +31,7 @@ importers:
         version: 4.15.1(magicast@0.3.5)(vue@3.5.16(typescript@5.8.3))
       '@vee-validate/zod':
         specifier: ^4.15.1
-        version: 4.15.1(vue@3.5.16(typescript@5.8.3))(zod@3.25.67)
+        version: 4.15.1(vue@3.5.16(typescript@5.8.3))(zod@4.0.5)
       '@vueuse/nuxt':
         specifier: 13.3.0
         version: 13.3.0(magicast@0.3.5)(nuxt@3.17.5(@parcel/watcher@2.5.1)(@types/node@22.15.21)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0)(drizzle-orm@0.44.2(@cloudflare/workers-types@4.20250617.0)(better-sqlite3@11.10.0)))(drizzle-orm@0.44.2(@cloudflare/workers-types@4.20250617.0)(better-sqlite3@11.10.0))(eslint@9.29.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.41.1)(sass@1.89.2)(terser@5.39.2)(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.21)(jiti@2.4.2)(sass@1.89.2)(terser@5.39.2)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))
@@ -48,8 +48,8 @@ importers:
         specifier: ^3.2.3
         version: 3.2.3(@types/debug@4.1.12)(@types/node@22.15.21)(jiti@2.4.2)(sass@1.89.2)(terser@5.39.2)(yaml@2.8.0)
       zod:
-        specifier: ^3.25.67
-        version: 3.25.67
+        specifier: ^4.0.5
+        version: 4.0.5
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.14.1
@@ -5839,6 +5839,9 @@ packages:
   zod@3.25.67:
     resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
 
+  zod@4.0.5:
+    resolution: {integrity: sha512-/5UuuRPStvHXu7RS+gmvRf4NXrNxpSllGwDnCBcJZtQsKrviYXm54yDGV2KYNLT5kq0lHGcl7lqWJLgSaG+tgA==}
+
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
@@ -7851,11 +7854,11 @@ snapshots:
       - magicast
       - vue
 
-  '@vee-validate/zod@4.15.1(vue@3.5.16(typescript@5.8.3))(zod@3.25.67)':
+  '@vee-validate/zod@4.15.1(vue@3.5.16(typescript@5.8.3))(zod@4.0.5)':
     dependencies:
       type-fest: 4.41.0
       vee-validate: 4.15.1(vue@3.5.16(typescript@5.8.3))
-      zod: 3.25.67
+      zod: 4.0.5
     transitivePeerDependencies:
       - vue
 
@@ -12294,5 +12297,7 @@ snapshots:
       readable-stream: 4.7.0
 
   zod@3.25.67: {}
+
+  zod@4.0.5: {}
 
   zwitch@2.0.4: {}
