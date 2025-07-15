@@ -1,4 +1,5 @@
 import { SqliteDrizzle } from '@effect/sql-drizzle/Sqlite'
+import { eq } from 'drizzle-orm'
 import { Effect, Option, pipe, Schema } from 'effect'
 import { DrizzleLive, tables } from '../../server/utils/drizzle'
 import { Site, SiteInsert } from './model'
@@ -9,8 +10,8 @@ export class SiteService extends Effect.Service<SiteService>()('SiteService', {
   effect: Effect.gen(function* () {
     const db = yield* SqliteDrizzle
 
-    const list = Effect.fn('SiteService#list')(function* () {
-      return yield* db.select().from(tables.sites)
+    const list = Effect.fn('SiteService#list')(function* (all: boolean = false) {
+      return yield* db.select().from(tables.sites).where(eq(tables.sites.integrated, true).if(!all))
     })
 
     const insert = Effect.fn('SiteService#insert')(function* (maybeUrl: string) {

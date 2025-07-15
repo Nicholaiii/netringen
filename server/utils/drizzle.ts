@@ -28,6 +28,7 @@ export const DrizzleTest = SqliteDrizzleLayer.pipe(
 const FakeSite = (): SiteInsert => ({
   name: faker.word.sample(),
   url: faker.internet.url({ appendSlash: true }),
+  integrated: faker.datatype.boolean(),
 })
 
 export const SeedDatabase = Effect.fn('SeedDatabase')(function* () {
@@ -49,14 +50,3 @@ export const MigrationLayer = Layer.effectDiscard(Effect.gen(function* () {
 
   return yield* Console.info('Migrations complete')
 }))
-
-export const Migration = Effect.gen(function* () {
-  const db = yield* SqliteDrizzle
-
-  yield* Effect.tryPromise(async () => await migrate(db, {
-    migrationsFolder: './server/database/migrations',
-    migrationsSchema: './server/database/schema.ts',
-  }))
-
-  return yield* Console.info('Migrations complete')
-})

@@ -19,15 +19,25 @@ const { defineField, errors, handleSubmit } = useForm({
 
 const [url] = defineField('url')
 
-const onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit(async (values) => {
   loading.value = true
 
-  setTimeout(() => {
-    success.value = true
-    loading.value = false
-  }, 1000)
+  const { error } = await useFetch('/api/sites', {
+    method: 'POST',
+    body: JSON.stringify(values),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
 
-  return values
+  if (error.value) {
+    errors.value.url = 'Failed to submit URL. Please try again.'
+    loading.value = false
+    return
+  }
+
+  success.value = true
+  loading.value = false
 })
 </script>
 
@@ -37,7 +47,7 @@ const onSubmit = handleSubmit((values) => {
       <h5>Register</h5>
       <label for="url">URL</label>
       <span>
-        <input id="url" v-model="url" :class="{ error: errors.url }">
+        <input id="url" v-model="url" :class="{ error: errors.url }" />
         <button type="submit" :disabled="loading" @click="onSubmit">
           Submit
         </button>
@@ -73,7 +83,6 @@ form {
   }
 
   input {
-    border: 2px dashed var(--green);
     padding: 5px;
 
     &.error {

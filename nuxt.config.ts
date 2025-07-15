@@ -30,6 +30,11 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+  nitro: {
+    experimental: {
+      openAPI: true,
+    },
+  },
   vite: {
     test: {
       includeSource: ['server/**/*.test.ts', 'features/**/*.test.ts'],

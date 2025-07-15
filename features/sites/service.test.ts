@@ -1,5 +1,5 @@
 import { expect, layer } from '@effect/vitest'
-import { Effect, Layer } from 'effect'
+import { Effect, Layer, pipe } from 'effect'
 import { DrizzleTest, MigrationLayer, SeedDatabase } from '../../server/utils/drizzle'
 import { mockClientWithResponse } from '../../test/fixtures/HttpClient'
 import { HTMLParsingService } from './parsing/html'
@@ -19,13 +19,23 @@ const successDeps = Layer.mergeAll(
   ),
 )
 
+const SeedMemoised = Effect.flatten(Effect.cached(SeedDatabase()))
+
 layer(successDeps)('SiteService', async (it) => {
-  it.effect('returns a list of sites', Effect.fn(function* () {
-    const length = yield* SeedDatabase()
+  it.effect('returns a list of all sites', Effect.fn(function* () {
+    const length = yield* SeedMemoised
+
+    const result = yield* SiteService.list(true)
+    expect(result).not.toHaveLength(0)
+    expect(result).toHaveLength(length)
+  }))
+
+  it.effect('returns a list of activated sites', Effect.fn(function* () {
+    const length = yield* SeedMemoised
 
     const result = yield* SiteService.list()
     expect(result).not.toHaveLength(0)
-    expect(result).toHaveLength(length)
+    expect(result).not.toHaveLength(length)
   }))
 
   it.scoped('inserts new site submissions', Effect.fn(function* () {
