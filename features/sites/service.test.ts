@@ -1,5 +1,5 @@
 import { expect, layer } from '@effect/vitest'
-import { Effect, Layer, pipe } from 'effect'
+import { Effect, Layer } from 'effect'
 import { DrizzleTest, MigrationLayer, SeedDatabase } from '../../server/utils/drizzle'
 import { mockClientWithResponse } from '../../test/fixtures/HttpClient'
 import { HTMLParsingService } from './parsing/html'
