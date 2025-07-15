@@ -15,6 +15,20 @@
       "when": 1746782647046,
       "tag": "0001_eminent_scorpion",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1752599074750,
+      "tag": "0002_pretty_killer_shrike",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1752600020331,
+      "tag": "0003_big_jazinda",
+      "breakpoints": true
     }
   ]
 }

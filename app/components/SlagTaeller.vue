@@ -1,13 +1,9 @@
 <script lang="ts" setup>
 const digitAmount = 5
-const hitcount = 123
 
-const digitsArray = computed(() => {
-  const digits = String(hitcount).padStart(digitAmount, '0').split('')
-  return digits.map((digit) => {
-    return digit === '0' ? '0' : digit
-  })
-})
+const { data: hitcount } = await useFetch('/api/hitcounter')
+
+const digitsArray = computed(() => String(hitcount.value).padStart(digitAmount, '0').split(''))
 </script>
 
 <template>
