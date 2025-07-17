@@ -6,3 +6,8 @@ export const sites = sqliteTable('sites', {
   url: text('url').notNull(),
   integrated: integer({ mode: 'boolean' }).notNull().default(false),
 })
+
+export const hits = sqliteTable('hits', {
+  id: integer('id').primaryKey(),
+  count: integer('count').notNull().default(1),
+})
