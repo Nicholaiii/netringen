@@ -12,7 +12,7 @@ const { defineField, errors, handleSubmit } = useForm({
   },
   validationSchema: toTypedSchema(
     z.object({
-      url: z.string().url('Invalid URL format').nonempty('URL is required'),
+      url: z.url('errors.invalid_url').nonempty('errors.missing_url'),
     }),
   ),
 })
@@ -52,7 +52,7 @@ const onSubmit = handleSubmit(async (values) => {
           Submit
         </button>
       </span>
-      <small v-if="errors.url">{{ errors.url }}</small>
+      <small v-if="errors.url">{{ $t(errors.url) }}</small>
     </div>
   </form>
 

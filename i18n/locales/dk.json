@@ -19,5 +19,9 @@
   },
   "footer": {
     "no_rights_reserved": "Ingen rettigheder forbeholdes."
+  },
+  "errors": {
+    "invalid_url": "Url er ugyldig.",
+    "missing_url": "Url feltet er tomt."
   }
 }

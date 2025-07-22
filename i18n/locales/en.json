@@ -26,5 +26,9 @@
   },
   "footer": {
     "no_rights_reserved": "No rights reserved."
+  },
+  "errors": {
+    "invalid_url": "Url is not valid.",
+    "missing_url": "Url field is empty."
   }
 }
