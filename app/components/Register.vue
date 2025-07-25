@@ -47,7 +47,7 @@ const onSubmit = handleSubmit(async (values) => {
       <h5>Register</h5>
       <label for="url">URL</label>
       <span>
-        <input id="url" v-model="url" :class="{ error: errors.url }" />
+        <input id="url" v-model="url" :class="{ error: errors.url }">
         <button type="submit" :disabled="loading" @click="onSubmit">
           Submit
         </button>
