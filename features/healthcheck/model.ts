@@ -1,7 +1,11 @@
-import { Schema } from 'effect'
+import { Effect, Schema } from 'effect'
 
-export const Status = Schema.Literal('success', 'failure')
+export const Status = Schema.Literal('running', 'erroring', 'starting')
 export type Status = typeof Status.Type
+
+export const running: Effect.Effect<Status> = Effect.succeed('running')
+export const erroring: Effect.Effect<Status> = Effect.succeed('erroring')
+export const starting: Effect.Effect<Status> = Effect.succeed('starting')
 
 export const HealthcheckData = Schema.Struct({
   status: Status,
