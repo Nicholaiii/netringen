@@ -25,7 +25,7 @@
     "@nuxt/eslint": "^1.5.2",
     "@vee-validate/nuxt": "^4.15.1",
     "@vee-validate/zod": "^4.15.1",
-    "@vueuse/nuxt": "13.5.0",
+    "@vueuse/nuxt": "14.4.0",
     "cheerio": "^1.1.0",
     "effect": "^3.16.13",
     "nuxt": "^3.17.7",
