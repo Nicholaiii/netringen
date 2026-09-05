@@ -1,5 +1,5 @@
 # Build Stage
-FROM node:22-alpine AS build
+FROM node:22.23.2-alpine AS build
 WORKDIR /app
 RUN corepack enable
 
@@ -10,7 +10,7 @@ COPY . ./
 RUN pnpm run build
 
 # Production Stage
-FROM node:22-alpine
+FROM node:22.23.2-alpine
 WORKDIR /app
 
 # Only `.output` folder is needed from the build stage
